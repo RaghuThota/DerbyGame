@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+		<property name="connection.url">jdbc:derby:DerbyHome9;create=true</property>
+		<property name="connection.username">user</property>
+		<property name="connection.password">password</property>
+		<property name="connection.pool_size">1</property>
+		<property name="dialect">org.hibernate.dialect.DerbyDialect</property> 
+
+      <!--   <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mkyong</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+		<!-- Second-level cache -->
+		<!-- <property name="cache.use_second_level_cache">true</property> <property 
+			name="cache.use_query_cache">true</property> <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<mapping class="com.project.derby.bean.Player" />
+		<mapping class="com.project.derby.bean.Entries" />
+	</session-factory>
+
+</hibernate-configuration>
+
+
