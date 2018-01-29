@@ -1,7 +1,10 @@
 /bin
-      .classpath
-        .project
-        .settings/
-        DerbyHome9/
-        derby.log
-        target/classes/
+      
+.classpath
+        
+.project
+.settings/
+DerbyHome9/
+derby.log
+target/
+*.log
